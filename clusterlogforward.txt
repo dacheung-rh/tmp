@@ -1,0 +1,34 @@
+apiVersion: logging.openshift.io/v1
+kind: ClusterLogForwarder
+metadata:
+  name: instance
+  namespace: openshift-logging
+spec:
+  inputs:
+    - application:
+        namespaces:
+          - 3scale-npe
+      name: 3scale-logs
+  outputs:
+
+    - name: npe-splunk
+      syslog:
+        addLogSource: true
+        facility: user
+        payloadKey: message
+        rfc: RFC3164
+      type: syslog
+      url: 'udp://192.168.48.9:514'  pipelines:
+    - inputRefs:
+        - infrastructure
+        - application
+      name: npe-ocp-efk
+      outputRefs:
+        - default
+    - inputRefs:
+        - 3scale-logs
+      labels:
+        project: 3scale-npe
+      name: npe-ext-splunk
+      outputRefs:
+        - npe-splunk
