@@ -1,0 +1,1 @@
+DefaultEndpointsProtocol=https;AccountName=afneasprdansible01lrs;AccountKey=awgbQLCgjBsDKM4nFOAzeEhNATL2Jnyp5hUZ1tszS58qcsHkv0MDaeJNwkWAqqAdvPj7H2drEe66+AStVZ+Qkg==;EndpointSuffix=core.windows.net
