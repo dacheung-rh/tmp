@@ -1,1 +1,5 @@
 DefaultEndpointsProtocol=https;AccountName=afneasprdansible01lrs;AccountKey=awgbQLCgjBsDKM4nFOAzeEhNATL2Jnyp5hUZ1tszS58qcsHkv0MDaeJNwkWAqqAdvPj7H2drEe66+AStVZ+Qkg==;EndpointSuffix=core.windows.net
+
+
+https://portal.azure.com/#@fwdgroup.onmicrosoft.com/resource/subscriptions/8403eed9-4515-4e51-8eca-76a86aa1b8a5/resourceGroups/rg-afn-eas-prd-ansible-02/providers/Microsoft.Storage/storageAccounts/afneasprdansible01lrs
+
