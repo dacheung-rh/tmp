@@ -3,3 +3,15 @@ DefaultEndpointsProtocol=https;AccountName=afneasprdansible01lrs;AccountKey=awgb
 
 https://portal.azure.com/#@fwdgroup.onmicrosoft.com/resource/subscriptions/8403eed9-4515-4e51-8eca-76a86aa1b8a5/resourceGroups/rg-afn-eas-prd-ansible-02/providers/Microsoft.Storage/storageAccounts/afneasprdansible01lrs
 
+
+
+$connectTestResult = Test-NetConnection -ComputerName afneasprdansible01lrs.file.core.windows.net -Port 445
+if ($connectTestResult.TcpTestSucceeded) {
+    # Save the password so the drive will persist on reboot
+    cmd.exe /C "cmdkey /add:`"afneasprdansible01lrs.file.core.windows.net`" /user:`"localhost\fwdsmb01`" /pass:`"awgbQLCgjBsDKM4nFOAzeEhNATL2Jnyp5hUZ1tszS58qcsHkv0MDaeJNwkWAqqAdvPj7H2drEe66+AStVZ+Qkg==`""
+    # Mount the drive
+    New-PSDrive -Name Z -PSProvider FileSystem -Root "\\afneasprdansible01lrs.file.core.windows.net\afneasprdansible01lrs-smb01" -Persist
+} else {
+    Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
+}
+
