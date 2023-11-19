@@ -1,0 +1,19 @@
+https://docs.openshift.com/container-platform/4.12/nodes/pods/nodes-pods-secrets.html#nodes-pods-secrets-creating-sa_nodes-pods-secrets
+
+oc create sa abc
+
+oc create -f - <<EOF
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-sa-abc
+  annotations:
+    kubernetes.io/service-account.name: “abc” 
+type: kubernetes.io/service-account-token
+EOF
+
+oc get secret | grep abc                                                 
+abc-dockercfg-dhqch                   kubernetes.io/dockercfg               1      5m48s
+abc-token-vrndb                       kubernetes.io/service-account-token   4      5m48s
+
+oc get secret abc-token-vrndb -o go-template --template="{{.data.token}}"
