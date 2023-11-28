@@ -18,3 +18,7 @@ settingsRef:
   kind: ScanSetting
   apiGroup: compliance.openshift.io/v1alpha1
 EOF
+
+
+
+EF3CE6C0141746E6A1046C719114927A-A5
