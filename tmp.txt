@@ -23,3 +23,8 @@ EOF
 
 EF3CE6C0141746E6A1046C719114927A-A5
 
+
+
+falcon_localfile_path: c:\WindowsSensor\WindowsSensor.exe
+falcon_cid: EF3CE6C0141746E6A1046C719114927A-A5
+
