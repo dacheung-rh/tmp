@@ -28,3 +28,5 @@ EF3CE6C0141746E6A1046C719114927A-A5
 falcon_localfile_path: c:\WindowsSensor\WindowsSensor.exe
 falcon_cid: EF3CE6C0141746E6A1046C719114927A-A5
 
+
+https://testaabc.blob.core.windows.net/testabc/dd-qed-qede-qedf-qedi-qedr-8.33.0.20_dup7.6-1.el7_6.iso?sp=r&st=2023-12-05T04:33:53Z&se=2023-12-05T12:33:53Z&spr=https&sv=2022-11-02&sr=b&sig=vFVJLmkPGru6n7j%2Bdrd8heQqvW53GLVcMNSO7evV5%2FA%3D
